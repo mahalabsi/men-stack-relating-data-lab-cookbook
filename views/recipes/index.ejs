@@ -8,6 +8,18 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <h1>My Recipes</h1>
-  <a href ="recipes/new">Add a Recipe</a>
+  <a href ="/recipes/new">Add a Recipe</a>
+
+  <ul>
+    <% recipes.forEach((recipe) => { %>
+      <li>
+        A listing in <%= recipe.name %> <%= recipe.ingredients %> owned by <%= recipe.owner.username %>
+        <a href="/recipes/<%= recipe._id %>">View more details</a>
+      </li>
+    <% }) %>
+  </ul>
+
+
+
 </body>
 </html>
